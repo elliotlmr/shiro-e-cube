@@ -28,7 +28,7 @@ const Container = styled.div`
 
 const Subcontainer = styled.div`
   width: 90%;
-  background-color: rgba(15, 15, 15, 0.3);
+  background-color: rgba(15, 15, 15, 0.9);
   border: 5px ridge var(--color-light);
   margin: 30px 0 35px 0;
   &.vitrine-text {
@@ -121,31 +121,6 @@ const Button = styled.button`
 export default function Vitrine(props) {
   const [imageIndex, setImageIndex] = useState(0);
 
-  useEffect(() => {
-    let carousel = document.getElementById("vitrine-carousel");
-    let leftBtn = document.getElementById("carousel-left-btn");
-    let rightBtn = document.getElementById("carousel-right-btn");
-
-    if (carousel && leftBtn && rightBtn) {
-      if (imageIndex == 0) {
-        carousel.style.left = "0";
-        leftBtn.style.display = "none";
-      }
-      if (imageIndex == 1) {
-        carousel.style.left = "-100%";
-        leftBtn.style.display = "initial";
-        rightBtn.style.display = "initial";
-      }
-      if (imageIndex == 2) {
-        carousel.style.left = "-200%";
-        rightBtn.style.display = "none";
-      }
-      if (!imagesArray[props.globalIndex][1]) {
-        setImageIndex(0);
-      }
-    }
-  }, [imageIndex]);
-
   const textArray = [
     "This project was about creating an API in order to be able to post, modify and delete 'sauce recipes' for sharing with other users. People could at the end like, dislike a recipe from other users. A moderator account was also needed.",
     "This project was about optimizing a website that was already created. I had mainly to reorganize the HTML code, compress the JS code, compress images, replace the black-hat code into S.E.O firendly one, and finally make the website accessible.",
@@ -163,6 +138,31 @@ export default function Vitrine(props) {
     [P1, P2, P3],
     [WIP],
   ];
+
+  useEffect(() => {
+    let carousel = document.getElementById("vitrine-carousel");
+    let leftBtn = document.getElementById("carousel-left-btn");
+    let rightBtn = document.getElementById("carousel-right-btn");
+
+    if (carousel && leftBtn && rightBtn) {
+      if (imageIndex === 0) {
+        carousel.style.left = "0";
+        leftBtn.style.display = "none";
+      }
+      if (imageIndex === 1) {
+        carousel.style.left = "-100%";
+        leftBtn.style.display = "initial";
+        rightBtn.style.display = "initial";
+      }
+      if (imageIndex === 2) {
+        carousel.style.left = "-200%";
+        rightBtn.style.display = "none";
+      }
+      if (!imagesArray[props.globalIndex][1]) {
+        setImageIndex(0);
+      }
+    }
+  }, [imageIndex, imagesArray, props.globalIndex]);
 
   function handleLeftButton() {
     if (imageIndex > 0) {
@@ -189,14 +189,14 @@ export default function Vitrine(props) {
               id="carousel-left-btn"
               onClick={handleLeftButton}
             >
-              <i class="bi bi-arrow-left-circle"></i>
+              <i className="bi bi-arrow-left-circle"></i>
             </Button>
             <Button
               className="carousel-right-btn"
               id="carousel-right-btn"
               onClick={handleRightButton}
             >
-              <i class="bi bi-arrow-right-circle"></i>
+              <i className="bi bi-arrow-right-circle"></i>
             </Button>
             <Carousel id="vitrine-carousel">
               {props.globalIndex && (

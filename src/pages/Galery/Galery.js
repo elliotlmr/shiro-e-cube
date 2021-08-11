@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "styled-components";
-import GaleryNav from "./components/GaleryNav";
 import ProjectTitle from "./components/ProjectTitle";
 import Television from "./components/Television";
 import Vitrine from "./components/Vitrine";

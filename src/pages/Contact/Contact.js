@@ -111,10 +111,10 @@ export default function Contact() {
         </Section>
         <Section>
           <ContactLink target='_blank' rel='noreferrer' href="https://github.com/elliotlmr">
-            <i class="bi bi-github"></i>
+            <i className="bi bi-github"></i>
           </ContactLink>
           <ContactLink target='_blank' rel='noreferrer' href="https://www.linkedin.com/in/elliot-lemaire/">
-            <i class="bi bi-linkedin"></i>
+            <i className="bi bi-linkedin"></i>
           </ContactLink>
         </Section>
       </Subcontainer>
