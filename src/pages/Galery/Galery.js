@@ -34,7 +34,7 @@ export default function Galery() {
         />
       </Subcontainer>
       <Subcontainer>
-        <Vitrine />
+        <Vitrine globalIndex={globalIndex} />
       </Subcontainer>
     </Container>
   );
