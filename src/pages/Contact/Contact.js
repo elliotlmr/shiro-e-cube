@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import CV from '../../images/CV_Elliot_Lemaire.pdf';
 
 const animatedTitle = keyframes`
     0% {
@@ -105,7 +106,7 @@ export default function Contact() {
         </Section>
         <Section>
           <Text>Download my C.V.</Text>
-          <ContactLink>here</ContactLink>
+          <ContactLink href={CV} download>here</ContactLink>
           <Text>or visit :</Text>
         </Section>
         <Section>

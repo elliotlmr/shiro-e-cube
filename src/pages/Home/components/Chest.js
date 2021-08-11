@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ChestImg from "../../../images/CV_chest.png";
+import CV from '../../../images/CV_Elliot_Lemaire.pdf';
 
 const ChestContainer = styled.div`
 z-index: 2;
@@ -44,7 +45,9 @@ export default function Chest() {
     
   return (
     <ChestContainer>
+      <a href={CV} download>
       <Sprite src={ChestImg} id='chest' onMouseOver={chestAnimationOver} onMouseOut={chestAnimationOut} />
+      </a>
     </ChestContainer>
   );
 }
