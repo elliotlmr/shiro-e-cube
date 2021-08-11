@@ -262,7 +262,7 @@ export default function Cube(props) {
 
   function initCube() {
     document.getElementById("cube").style.transform =
-      "rotateX(-5deg) rotateY(-2deg) rotateZ(0deg)";
+      "rotateX(-25deg) rotateY(-25deg) rotateZ(0deg)";
   }
 
   function handleZoomIn() {
