@@ -21,7 +21,7 @@ const Sprite = styled.img`
   }
 `;
 
-export default function Character() {
+export default function Character(props) {
   function BasicAnimation() {
     let png = document.getElementById("character-sprite");
     if (png) {
@@ -42,8 +42,18 @@ export default function Character() {
   }
 
   return (
-    <CharContainer>
-      <Sprite src={CharSprite} id='character-sprite' onLoad={BasicAnimation} />
+    <CharContainer
+      onMouseOver={() => {
+        props.setDisplay(true);
+      }}
+      onClick={() => {
+        props.setDisplay(true);
+      }}
+      onMouseOut={() => {
+        props.setDisplay(false);
+      }}
+    >
+      <Sprite src={CharSprite} id="character-sprite" onLoad={BasicAnimation} />
     </CharContainer>
   );
 }

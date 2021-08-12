@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -31,13 +32,24 @@ const Text = styled.p`
   color: var(--color-dark);
 `;
 
-export default function Bubble() {
+export default function Bubble(props) {
+
+  useEffect(() => {
+    setTimeout(() => {
+      props.setDisplay(false)
+    }, 3000)
+  }, [props.display, props]);
+
   return (
-    <Container>
-      <Text>
-        You can use the controller or your mouse to interact with the cube !
-      </Text>
-      <Pointer />
-    </Container>
+    <>
+      {props.display && (
+        <Container>
+          <Text>
+            You can use the controller or your mouse to interact with the cube !
+          </Text>
+          <Pointer />
+        </Container>
+      )}
+    </>
   );
 }

@@ -13,6 +13,9 @@ z-index: 2;
   &:hover {
     filter: drop-shadow(0 0 2px var(--color-light));
   }
+  @media (max-width: 800px) {
+    
+  }
 `;
 
 const Sprite = styled.img`
